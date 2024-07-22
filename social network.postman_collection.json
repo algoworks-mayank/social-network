@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "615dcd59-5be6-49f2-bf35-b9f1e9e3865a",
+		"name": "social network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28592415",
+		"_collection_link": "https://grey-spaceship-136956.postman.co/workspace/Team-Workspace~e90531c1-0423-414e-8f99-00a16b5003b8/collection/28592415-615dcd59-5be6-49f2-bf35-b9f1e9e3865a?action=share&source=collection_link&creator=28592415"
+	},
+	"item": [
+		{
+			"name": "sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"testpassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/signup/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testuser@example.com\",\n    \"password\": \"testpassword\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token-refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMTcxNDQwOCwiaWF0IjoxNzIxNjI4MDA4LCJqdGkiOiIyNGIzYzlhYTdjMzk0ZGJiODBmMTFiZDQyZTE3ZDA5MSIsInVzZXJfaWQiOjF9.t4rnLrGrua4lapL6ul57_vceELc6z_vflqyAD80hBIg\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/token-refresh/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token-refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxNjI5OTI0LCJpYXQiOjE3MjE2MjgwMDgsImp0aSI6IjMxMGM3YzA0MWU1NDRkNWI5M2Y4MTFmNGRkZTE5MDM2IiwidXNlcl9pZCI6MX0.4ueb6_gSnC7gQytPrf6n3XIdbfno9sIvkDUKRJtocTU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/search/?q=mayank&page=1&page_size=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "mayank"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "friend-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxNjMxODI2LCJpYXQiOjE3MjE2MzAwMjYsImp0aSI6IjExOGE5NTI3NTQ2NDQ5ZDFhN2Q4YWNlOWI5MDY3YTE2IiwidXNlcl9pZCI6MX0.R6P6B6MRoTnSiT1on_dJABtB-5Bc_x6vAHXBUgpwOfQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"to_user_id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/friend-request/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friend-request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accept or reject friend-request ",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxNjMyMjY4LCJpYXQiOjE3MjE2MzA0NjgsImp0aSI6IjhmYTJiMzg2NTkyNDRjNjZiYTc3ZjIyMWNjNDg5YzhiIiwidXNlcl9pZCI6Mn0.RO3KhW_inK3LXXK3IFGts-HY65nLI_n4xgnPzQTw3H8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"accept\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/friend-request/1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friend-request",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list friends",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxNjMyMjY4LCJpYXQiOjE3MjE2MzA0NjgsImp0aSI6IjhmYTJiMzg2NTkyNDRjNjZiYTc3ZjIyMWNjNDg5YzhiIiwidXNlcl9pZCI6Mn0.RO3KhW_inK3LXXK3IFGts-HY65nLI_n4xgnPzQTw3H8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/friends/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
