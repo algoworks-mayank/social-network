@@ -237,6 +237,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "pending-requests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxNjMyMjY4LCJpYXQiOjE3MjE2MzA0NjgsImp0aSI6IjhmYTJiMzg2NTkyNDRjNjZiYTc3ZjIyMWNjNDg5YzhiIiwidXNlcl9pZCI6Mn0.RO3KhW_inK3LXXK3IFGts-HY65nLI_n4xgnPzQTw3H8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/pending-requests/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pending-requests",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
