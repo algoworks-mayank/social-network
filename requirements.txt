@@ -1,0 +1,4 @@
+Django==4.2.14
+djangorestframework
+djangorestframework-simplejwt
+psycopg2-binary
